@@ -39,7 +39,7 @@ class Text extends Model
             $used_queens = [];
             $selected = $queens->random($rand->queen_count);
             foreach($selected AS $k => $q) {
-                $text = Str::replace("<queen_$k>",$q->name,$text);
+                $text = Str::replace("<queen_$k>",'<b>'.$q->name.'</b>',$text);
                 $used_queens[] = $q->id;
             }
 

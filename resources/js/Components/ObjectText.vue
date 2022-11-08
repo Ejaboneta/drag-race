@@ -3,7 +3,7 @@
         <div v-if="text.queens">
             <queen-photo v-for="queen in text.queens" :key="'queen-'+queen.id" :queen="queen" />
         </div>
-        {{text.text}}
+        <span v-html="text.text"></span>
     </div>
 </template>
 
