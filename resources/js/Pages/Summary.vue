@@ -27,7 +27,7 @@
                             </thead>
                             <tbody>
                                 <tr v-for="queen in ranking.queens" :key="'queen'+queen.id">
-                                    <td>{{queen.name}} {{queen.id}} </td>
+                                    <td>{{queen.name}}</td>
                                     <td v-for="episode in ranking.episodes" :key="'episode'+episode.id" style="padding:0">
                                         <div style="margin:0;padding:10px;height:100%" v-if="episode.queens[queen.id]" :class="episode.queens[queen.id].standing">{{episode.queens[queen.id].standing}}</div>
                                     </td>

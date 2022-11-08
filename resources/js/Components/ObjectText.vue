@@ -14,7 +14,7 @@
 </style>
 
 <script>
-import QueenPhoto from '@/components/QueenPhoto.vue';
+import QueenPhoto from '@/Components/QueenPhoto.vue';
     export default {
         components: {
             QueenPhoto

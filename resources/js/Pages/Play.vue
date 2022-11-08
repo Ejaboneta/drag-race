@@ -29,10 +29,18 @@
                             <hr />
                         </div>
 
-                        <div>
+                        <div class="text-right">
                             <!-- <div v-if="stage.order > 1">Previous</div> -->
-                            <div v-if="stage.order < 8"><Link :href="route('watch/play',{episode:episode.id,stage: (stage.order + 1)})">Next</Link></div>
-                            <div v-else><Link :href="route('watch/summary',{episode:episode.id, stage: (stage.order + 1)})">View Results</Link></div>
+                            <div v-if="stage.order < 8">
+                                <Link :href="route('watch/play',{episode:episode.id,stage: (stage.order + 1)})">
+                                    <PrimaryButton color="green">Next</PrimaryButton>
+                                </Link>
+                            </div>
+                            <div v-else>
+                                <Link :href="route('watch/summary',{episode:episode.id, stage: (stage.order + 1)})">
+                                    <PrimaryButton color="green">View Results</PrimaryButton>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -47,10 +55,12 @@ import AppLayout from '@/Layouts/AppLayout.vue';
 import Season from '@/Components/Season.vue';
 import ObjectText from '@/Components/ObjectText.vue';
 import { Link } from '@inertiajs/inertia-vue3';
+import PrimaryButton from '@/Components/PrimaryButton.vue';
 export default {
     components: {
         AppLayout,
         ObjectText,
+        PrimaryButton,
         Season,
         Link
     },
