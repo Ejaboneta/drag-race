@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Skill;
+use App\Models\Skills\Skill;
+use App\Models\Queens\Queen;
+
 use Inertia\Inertia;
-use App\Models\Queen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

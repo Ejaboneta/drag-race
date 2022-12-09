@@ -1,7 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Seasons;
 
+use App\Models\Episodes\Episode;
+use App\Models\Episodes\EpisodeChallenge;
+use App\Models\Episodes\EpisodeQueen;
+use App\Models\LipSyncs\LipSync;
+use App\Models\ObjectText;
+use App\Models\Text;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -50,12 +56,12 @@ class Season extends Model
             $episode = $this->episodes()->create(['number'=>$number]);
 
         // Queens
-        foreach($this->queens()->whereNull('elimination_id')->get() AS $queen) {
-            $episode->queens()->create([
-                'season_id' => $this->id,
-                'queen_id' => $queen->id
-            ]);
-        }
+            foreach($this->queens()->whereNull('elimination_id')->get() AS $queen) {
+                $episode->queens()->create([
+                    'season_id' => $this->id,
+                    'queen_id' => $queen->id
+                ]);
+            }
 
         // Starting Text
             if($number==1) {

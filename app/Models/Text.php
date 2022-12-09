@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Queens\Queen;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;

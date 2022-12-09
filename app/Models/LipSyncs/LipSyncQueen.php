@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\LipSyncs;
 
+use App\Models\Queens\Queen;
+use App\Models\Quote;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

@@ -1,7 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\LipSyncs;
 
+use App\Models\Episodes\Episode;
+use App\Models\ObjectText;
+use App\Models\Seasons\Season;
+use App\Models\Skills\Skill;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

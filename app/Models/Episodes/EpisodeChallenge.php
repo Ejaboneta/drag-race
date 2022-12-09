@@ -1,7 +1,10 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Episodes;
 
+use App\Models\Challenges\Challenge;
+use App\Models\ObjectText;
+use App\Models\Seasons\Season;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

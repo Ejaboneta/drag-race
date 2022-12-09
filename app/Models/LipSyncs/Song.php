@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\LipSyncs;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class SkillBonus extends Model
+class Song extends Model
 {
     use SoftDeletes;
     protected
-        $fillable = ['name','queen_id','season_id','episode_id','skill_id',];
+        $fillable = ['title','artist'];
 }

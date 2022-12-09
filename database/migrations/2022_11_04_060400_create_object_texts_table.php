@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('object_type');
             $table->bigInteger('object_id')->unsigned();
+            $table->foreignId('episode_stage_part_id')->constrained();
             $table->string('stage');
             $table->string('text');
             $table->string('queen_ids')->default('');

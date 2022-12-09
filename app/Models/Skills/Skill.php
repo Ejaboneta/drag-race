@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Skills;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Song extends Model
+class Skill extends Model
 {
     use SoftDeletes;
     protected
-        $fillable = ['title','artist'];
+        $fillable = ['name'];
 }

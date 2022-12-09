@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Seasons\Season;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

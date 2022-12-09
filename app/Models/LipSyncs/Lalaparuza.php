@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\LipSyncs;
 
+use App\Models\ObjectText;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Attribute;
-use App\Models\Queen;
-use Inertia\Inertia;
-use App\Models\Season;
+use App\Models\Queens\Queen;
+use App\Models\Seasons\Season;
 use App\Models\Series;
+
+use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

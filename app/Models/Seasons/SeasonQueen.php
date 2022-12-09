@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Seasons;
 
+use App\Models\Episodes\Episode;
+use App\Models\Queens\Queen;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

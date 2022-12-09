@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Episode;
-use App\Models\EpisodeStage;
-use App\Models\EpisodeStagePart;
-use App\Models\ObjectText;
-use App\Models\Season;
+use App\Models\Episodes\Episode;
+use App\Models\Episodes\EpisodeStage;
+use App\Models\Seasons\Season;
+
 use Inertia\Inertia;
 
 class WatchController extends Controller {
@@ -17,32 +16,17 @@ class WatchController extends Controller {
         return Inertia::render('Watch',['season'=>$season,'queens'=>$season->queens]);
     }
 
-    public function watch(Episode $episode, $part) {
+    public function watch(Episode $episode, $stage_number) {
         $texts = collect();
-        $stages = EpisodeStage::where('order','=',$part);
-        $results = $stages->get();
+        $stage = $episode->stage($stage_number);
 
-        if($results->count() > 1) {
-           $stage = $results->where('episode','=',1)->first();
-        } else {
-            $stage = $results->whereNull('episode')->first();
-        }
         foreach($stage->parts AS $part) {
-            $r = $part->relationship;
-            if($r) {
-                $results = $episode->$r->texts()->where('stage','=',$part->slug)->orderBy('id')->get();
-            } else {
-                $results = $episode->texts()->where('stage','=',$part->slug)->orderBy('id')->get();
-            }
-
-            if($results->count() > 0) {
-                $array = [
-                    'id' => $part->id,
-                    'name' => $part->name,
-                    'items' => $results
-                ];
-                $texts->push($array);
-            }
+            $array = [
+                'id' => $part->id,
+                'name' => $part->name,
+                'items' => $part->texts,
+            ];
+            $texts->push($array);
         }
         return Inertia::render('Play',['season'=>$episode->season,'episode'=>$episode,'stage'=>$stage,'texts'=>$texts]);
     }

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('episode_stages', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('episode')->nullable()->unsigned();
+            $table->foreignId('episode_id')->constrained();
             $table->integer('order');
             $table->string('image')->default('');
             $table->timestamps();

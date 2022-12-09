@@ -1,6 +1,15 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Episodes;
+
+use App\Models\Category;
+use App\Models\Challenges\Challenge;
+use App\Models\LipSyncs\LipSync;
+use App\Models\LipSyncs\Song;
+use App\Models\ObjectText;
+use App\Models\Runway;
+use App\Models\Seasons\Season;
+use App\Models\Theme;
 
 use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Model;
@@ -19,6 +28,14 @@ class Episode extends Model
 
     public function challenges() {
         return $this->hasMany(EpisodeChallenge::class);
+    }
+
+    public function stages() {
+        return $this->hasMany(EpisodeStage::class);
+    }
+
+    public function stage($number) {
+        return $this->stages->firstWhere('order','=',$number);
     }
 
     public function texts() {
